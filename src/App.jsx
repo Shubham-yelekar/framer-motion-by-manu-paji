@@ -15,7 +15,7 @@ function App() {
   };
 
   return (
-    <div className="bg-neutral-800 h-screen p-2 flex flex-col-reverse md:flex-row items-stretch justify-start gap-2 ">
+    <div className="flex h-screen flex-col-reverse items-stretch justify-start gap-2 bg-neutral-800 p-2 md:flex-row">
       <Sidemenu
         topics={Object.keys(components)}
         onSelect={(topic) => setSeletedComponent(topic)}

@@ -13,7 +13,7 @@ const PlayGround = ({ children }) => {
         backgroundSize: "24px 24px",
         backgroundRepeat: "repeat",
       }}
-      className="flex-1 [perspective::1000px] [transform-style:preserve-3d] bg-neutral-900 h-full rounded-xl flex items-center justify-center"
+      className="flex-1 [perspective::1000px] [transform-style:preserve-3d] bg-neutral-900 h-full rounded-xl flex items-center justify-center overflow-hidden"
     >
       <div key={key}>{children}</div>
       <div

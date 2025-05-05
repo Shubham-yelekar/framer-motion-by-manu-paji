@@ -1,5 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 const PlayGround = ({ children }) => {
+  const [key, setKey] = useState(0);
+
+  const handleReload = () => {
+    setKey((prev) => prev + 1);
+  };
+
   return (
     <section
       style={{
@@ -9,7 +15,13 @@ const PlayGround = ({ children }) => {
       }}
       className="flex-1 [perspective::1000px] [transform-style:preserve-3d] bg-neutral-900 h-full rounded-xl flex items-center justify-center"
     >
-      {children}
+      <div key={key}>{children}</div>
+      <div
+        className="absolute top-2 right-2 bg-white rounded-3xl px-2 py-1 text-sm cursor-pointer"
+        onClick={handleReload}
+      >
+        Reload
+      </div>
     </section>
   );
 };

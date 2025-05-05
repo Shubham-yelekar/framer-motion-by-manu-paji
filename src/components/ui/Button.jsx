@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "motion/react";
+import clsx from "clsx";
 
-const Button = () => {
+const Button = ({ children, className = "", onClick }) => {
   return (
     <motion.button
+      onClick={onClick}
       whileHover={{
         rotateX: 25,
         rotateY: 10,
@@ -19,11 +21,14 @@ const Button = () => {
         duration: 0.4,
         ease: "easeInOut",
       }}
-      className="group cursor-pointer relative text-white px-12 py-4 rounded-lg bg-purple-700 shadow-[0px_1px_4px_0px_rgb(255,255,255,0.2)_inset, 0px_-1px_2px_0px_rgba(255,255,255,0.2)_inset]"
+      className={clsx(
+        "group cursor-pointer relative text-white px-12 py-4 rounded-lg bg-purple-700 shadow-[0px_1px_4px_0px_rgb(255,255,255,0.2)_inset, 0px_-1px_2px_0px_rgba(255,255,255,0.2)_inset]",
+        className
+      )}
     >
-      Button
-      <span className="absolute inset-x-0 bottom-px bg-gradient-to-r from-transparent via-purple-400 to-transparent h-[2px] w-3/4 mx-auto"></span>
-      <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300  inset-x-0 bottom-px bg-gradient-to-r from-transparent via-purple-400 to-transparent h-[8px] w-full mx-auto blur-sm"></span>
+      {children ?? "Button"}
+      <span className="absolute inset-x-0 bottom-[0px] bg-gradient-to-r from-transparent via-purple-400 to-transparent h-[2px] w-3/4 mx-auto"></span>
+      <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300  inset-x-0 bottom-[-2px] bg-gradient-to-r from-transparent via-purple-400 to-transparent h-[8px] w-full mx-auto blur-xs"></span>
     </motion.button>
   );
 };

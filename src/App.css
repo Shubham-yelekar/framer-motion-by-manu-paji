@@ -4,14 +4,20 @@ body {
   font-family: "Geist", sans-serif;
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar {
+    /* Customize the scrollbar width */
+    width: 4px;
+    padding: 2px;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+::-webkit-scrollbar-track {
+    /* Customize the scrollbar track */
+    background-color: rgb(41, 41, 41);
+}
+
+::-webkit-scrollbar-thumb {
+    /* Customize the scrollbar thumb */
+    background-color: rgb(10, 10, 10);
 }
 
 @utility shadow-1 {

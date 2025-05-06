@@ -3,15 +3,15 @@ import { useState } from "react";
 import "./App.css";
 import PlayGround from "./components/PlayGround";
 import Sidemenu from "./components/Sidemenu";
-import { Button, Card, ParellaxScroll } from "./components/ui";
+import { Button, Card, Gallery } from "./components/ui";
 
 function App() {
-  const [seletedComponent, setSeletedComponent] = useState("ParallaxScroll");
+  const [seletedComponent, setSeletedComponent] = useState("Gallery");
 
   const components = {
     Button: <Button />,
     Card: <Card />,
-    ParallaxScroll: <ParellaxScroll />,
+    Gallery: <Gallery/>
   };
 
   return (
